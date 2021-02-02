@@ -80,7 +80,9 @@ create table FichaDeInscripcionAM
 	EvaluaiconEstadoAnimo text,
     EvaluacionNutricional text,
     EvaluacionVisual text,
-    EvaluacionAuditiva text
+    EvaluacionAuditiva text,
+	ScriptBaseDatos.sql
+	--Gil
 );
 
 -- No me aparece nada de lo suyo...
