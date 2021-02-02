@@ -82,3 +82,5 @@ create table FichaDeInscripcionAM
     EvaluacionVisual text,
     EvaluacionAuditiva text
 );
+
+-- No me aparece nada de lo suyo...
