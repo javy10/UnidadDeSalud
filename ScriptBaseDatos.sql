@@ -81,7 +81,52 @@ create table FichaDeInscripcionAM
     EvaluacionNutricional text,
     EvaluacionVisual text,
     EvaluacionAuditiva text,
-	ScriptBaseDatos.sql
+	dolorcronico varchar(50),
+intensidadDolor varchar(50),
+periodoDolor varchar(50),
+lugarDolor varchar(100),
+incontinenciaUrinaria varchar(100),
+adultoMenAbandono varchar(50),
+adultoMconAbusoMaltrato varchar(50),
+observaciones text,
+-- Odontologia --
+presenciaSarrosubOsupragingival text,
+inflamacionGingival text,
+movilidadDentaria varchar(20),
+gradomovilidadDentaria varchar(30),
+abrasion varchar(20),
+atrision varchar(20),
+lesionesCariosas text,
+numeroPiezas int,
+usoDprotesis varchar(20),
+Otros text,
+-- Examenes de laboratorio
+examenHTyHB datetime,
+examenGlicemia datetime,
+examenCreatinina datetime,
+examenAcidoUrico datetime,
+examenETS_VIH datetime,
+examenECG datetime,
+examenHDL datetime,
+examenLDL datetime,
+examenColesterol datetime,
+examenTrigleceridos datetime,
+examenHeces datetime,
+examenOrina datetime,
+examenHecesmasSangreO datetime,
+examenNitrogenoUreico datetime,
+examenRxToraxAP datetime,
+-- Diagnostico
+estadoAdlutorM varchar(20),
+tratamiento text,
+referenciaA text,
+procimaCita datetime,
+-- Club a que pertenece
+clubAdultosMayores varchar(50),
+clubArtriticos varchar(50),
+clubHipertensos varchar(50),
+clubDiabeticos varchar(50),
+otrosClubs varchar(100)
 	--Gil
 );
 
