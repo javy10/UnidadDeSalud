@@ -511,4 +511,44 @@ sello text,
 responsable varchar(30)
 );
 
+-- pág 14 
+create table HojaSubsecuenteANiñao2a5(
+id Integer primary key auto_increment,
+nombre varchar(100) not null,
+noExpediente text,
+fechaConsulta datetime not null,
+fechaNacimiento date not null,
+edad Integer not null,
+sexo varchar(30) not null,
+motivoConsulta varchar(150),
+-- aun estoy en dudad con los siguientes dos campos 
+controlSubsecuente varchar(20),
+morbilidad varchar(20),
+-- signos vitales y somatometria
+FC varchar(100),
+FR varchar(100),
+TA varchar(100),
+peso Decimal(10,2),
+temperatura Decimal(10,2),
+Longitud Decimal(10,2),
+PC varchar(100),
+-- Evaluar signos de peligro
+evaluacionNopuedebeber varchar(20),
+evaluacionConvulsiones varchar(20),
+evaluacionLetargico varchar(20),
+evaluacionVomitaTodo varchar(20),
+enfermedadGrave varchar(20),
+niñoTosOdRespirar varchar(20),
+cuantoTiempohace varchar(100),
+noRespiracionesSeg varchar(30),
+rapidaRespiracion varchar(20),
+tirajeSubcostal varchar(20),
+estridorResposo varchar(20),
+sibilancias varchar(20),
+niñoDiarrea varchar(20),
+
+-- hacen falta datos
+
+);
+
 -- No me aparece nada de lo suyo...
