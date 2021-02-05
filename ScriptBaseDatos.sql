@@ -445,6 +445,21 @@ pregunta4A varchar(20),
 pregunta5A varchar(20),
 pregunta6A varchar(20)
 );
+create table ConsultaSubsecuenteHyM20a59(
+id Integer primary key auto_increment,
+motivoConsulta varchar(200),
+HXpresenteEnfermedad text,
+-- Examen fisico
+presionArterial varchar(20),
+pulso varchar(20),
+frecuenciaRespiratoria varchar(20),
+impresionDiagnostica text,
+tratamientoConsejeria text,
+referencia varchar(50),
+firmaResponsable text,
+sello text,
+responsable varchar(30)
+);
 create table HistoriaClinicaHyM20a59(
 id integer primary key auto_increment,
 -- Datos generales
@@ -495,22 +510,33 @@ refuerzoVacunaTd varchar(20),
 caries varchar(20),
 enfermedadPeridontal varchar(20),
 estaEnTX varchar(20),
-profilaxisAlgunaVez varchar(20)
+profilaxisAlgunaVez varchar(20),
+consultaSubsecuenteHyM20a59 Integer,
+CONSTRAINT fk_consulta FOREIGN KEY (consultaSubsecuenteHyM20a59)
+        REFERENCES ConsultaSubsecuenteHyM20a59(id)
 );
-create table ConsultaSubsecuenteHyM20a59(
+
+create table EvaluacionAlimentacion(
 id Integer primary key auto_increment,
-motivoConsulta varchar(200),
-HXpresenteEnfermedad text,
--- Examen fisico
-presionArterial varchar(20),
-pulso varchar(20),
-frecuenciaRespiratoria varchar(20),
-impresionDiagnostica text,
-tratamientoConsejeria text,
-referencia varchar(50),
-firmaResponsable text,
-sello text,
-responsable varchar(30)
+tomaPecho varchar(20),
+vecesAlDia Integer,
+tieneBuenaPosicion varchar(20),
+tieneBuenAgarre varchar(20),
+ingiereOalimentacion varchar(20),
+vecesAlDiaOA Integer,
+cualesAlimentos Varchar(150),
+tomaPacha varchar(20),
+huboCambioNalimentacion varchar(20),
+desdecuando datetime,
+--Control odontologico
+estaEncontrolOdont varchar(20),
+dolorDental varchar(20),
+AbscesoMucosaCdiente varchar(20),
+piezaDentalDestruidaSDolor varchar(20),
+presenciaFistulaIoE varchar(20),
+-- Continuacion de esta tabla en los proximos dias
+	
+
 );
 
 -- pág 14 
