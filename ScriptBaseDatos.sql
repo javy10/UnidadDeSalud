@@ -1,3 +1,46 @@
+create database UnidadSalud;
+create table FormularioExpedienteClin(
+id Integer primary key auto_increment,
+nombreEstablecimiento text not null,
+noExpediente text not null,
+codigoECOF varchar(100) not null,
+-- Datos del paciente
+noDUI varchar(10),
+noPasaporte varchar(20),
+nombreCompleto varchar(200) not null,
+fechaNacimiento date not null,
+edadAños Integer,
+edadMeses Integer,
+edadDias Integer,
+edadHoras Decimal(10,2),
+sexo varchar(14) not null,
+ocupacion varchar(45),
+estadocivil varchar(30) not null,
+direccionResidencia text not null,
+departamento varchar(100) not null,
+municipio varchar(100) not null,
+canton varchar(100) not null,
+area varchar(100) not null,
+nacionalidad varchar(100) not null,
+telefono varchar(100),
+-- Datos de la familia
+nombrePadre varchar(150),
+nombreMadre varchar(150),
+nombreConyugue varchar(150),
+nombreResponsable varchar(150),
+direccionResponsable text,
+departamentoResponsable varchar(100),
+municipioResponsable varchar(100),
+telefonoResponsable varchar(50),
+-- Datos de quien proporciono informacion del paciente
+nombreQuienProporciono varchar(200),
+parentesco varchar(100),
+documentoIdentificacion varchar(10),
+numeroDocumento varchar(50),
+responsableTomarInfo varchar(200),
+fechaIncripcion datetime,
+observaciones text
+);
 create table FichaDeInscripcionAM
 (
 	Id integer primary key auto_increment,
@@ -222,48 +265,7 @@ procimaCita datetime
 );
 
 -- continuacion
-create table FormularioExpedienteClin(
-id Integer primary key auto_increment,
-nombreEstablecimiento text not null,
-noExpediente text not null,
-codigoECOF varchar(100) not null,
--- Datos del paciente
-noDUI varchar(10),
-noPasaporte varchar(20),
-nombreCompleto varchar(200) not null,
-fechaNacimiento date not null,
-edadAños Integer,
-edadMeses Integer,
-edadDias Integer,
-edadHoras Decimal(10,2),
-sexo varchar(14) not null,
-ocupacion varchar(45),
-estadocivil varchar(30) not null,
-direccionResidencia text not null,
-departamento varchar(100) not null,
-municipio varchar(100) not null,
-canton varchar(100) not null,
-area varchar(100) not null,
-nacionalidad varchar(100) not null,
-telefono varchar(100),
--- Datos de la familia
-nombrePadre varchar(150),
-nombreMadre varchar(150),
-nombreConyugue varchar(150),
-nombreResponsable varchar(150),
-direccionResponsable text,
-departamentoResponsable varchar(100),
-municipioResponsable varchar(100),
-telefonoResponsable varchar(50),
--- Datos de quien proporciono informacion del paciente
-nombreQuienProporciono varchar(200),
-parentesco varchar(100),
-documentoIdentificacion varchar(10),
-numeroDocumento varchar(50),
-responsableTomarInfo varchar(200),
-fechaIncripcion datetime,
-observaciones text
-);
+
 create table FAntecedentesMedicos(
 id Integer primary key auto_increment,
 NombreEstablecimiento varchar(100),
@@ -546,8 +548,66 @@ tirajeSubcostal varchar(20),
 estridorResposo varchar(20),
 sibilancias varchar(20),
 niñoDiarrea varchar(20),
-
--- hacen falta datos
+cuantoTiempoD varchar(20),
+sangreHeces varchar(20),
+noEvacuaciones24H Integer,
+vomito varchar(20),
+novomitos24H Integer,
+estaDeshidratadoniño varchar(20),
+-- Si la respuesta es si evaluar
+-- Estado de conciencia
+letargico varchar(20),
+inquieto varchar(20),
+-- Sed
+bbMaloNpuede varchar(20),
+bbAvidamente varchar(20),
+-- Ojos
+ojosHundidos varchar(20),
+-- signo de pliegue cutaaneo
+desapareceLentmas2seg varchar(20),
+desapareceLentmenos2seg varchar(20),
+tieneFiebreniño varchar(20),
+tiempoFiebreniño varchar(20),
+mas7DiasF varchar(20),
+todosDias varchar(20),
+rigidezCuello varchar(20),
+areaHiperPaludismo varchar(20),
+areaHiperDengue varchar(20),
+-- dengue hemorragico
+verificarDAdbomen varchar(20),
+verificarEmental varchar(20),
+verificardFHipotermia varchar(20),
+verificarSangreespon varchar(20),
+verificarCianosis varchar(20),
+verificarVomitos varchar(20),
+verificarEdema varchar(20),
+verificarComorbilidad varchar(20),
+-- Dengue clasico
+verificarMialgias varchar(20),
+verificarCefalea varchar(20),
+verificarAnorexia varchar(20),
+verificarExantema varchar(20),
+verificarmalGenDolor varchar(20),
+verificarPruebaLao varchar(20),
+-- Sarampion
+erupcionCutanea varchar(20),
+tieneProbOidoniño varchar(20),
+tumefaccionDorejas varchar(20),
+membranaHiperemica varchar(20),
+supuracionVOidoMa14d varchar(20),
+supuracionVOidoMe14d varchar(20),
+dolorOido varchar(20),
+tieneProbGargantaniño varchar(20),
+gangliosDolorosos varchar(20),
+exudadoBlanco varchar(20),
+eritematosaGarganta varchar(20),
+DolorGarganSganglios varchar(20),
+evaluarAlimentacion Integer,
+CONSTRAINT fk_Alimentacion FOREIGN KEY (evaluarAlimentacion)
+        REFERENCES EvaluacionAlimentacion(id),
+evaluarDesarrollo Integer,
+CONSTRAINT fk_Desarrollo FOREIGN KEY (evaluarDesarrollo)
+        REFERENCES EvaluacionDesarrollo(id)
 
 );
 
