@@ -534,10 +534,67 @@ dolorDental varchar(20),
 AbscesoMucosaCdiente varchar(20),
 piezaDentalDestruidaSDolor varchar(20),
 presenciaFistulaIoE varchar(20),
--- Continuacion de esta tabla en los proximos dias
-	
-
+enciaInflamada varchar(20),
+piezaManchada varchar(20),
+vesiculasDolorosas varchar(20),
+dienteDesalojadoAD varchar(20),
+dienteScaries varchar(20),
+malAliento varchar(20),
+-- evaluar anemia
+evaluarTieneAnemia varchar(20),
+palidezPalmar varchar(20),
+hemoglobina varchar(50),
+-- Evaluar si presenta malnutricion
+desnutricion varchar(20),
+desnutriconSevera varchar(20),
+tipoDesnutricion varchar(30),
+obesidad varchar(20),
+sobrepeso varchar(20),
+tendenciaCrece varchar(30)
 );
+create table EvaluacionDesarrollo(
+id Integer primary key auto_increment,
+desarrolloniñao varchar(25),
+-- validar riesgo
+SriesgoCual varchar(150),
+-- verificar expediente
+vitaminaA varchar(20),
+fechaUdosis date,
+hierro varchar(40),
+fechaUdosisH date,
+multivitaminas varchar(20),
+fechaUdosisM date,
+mebendazo varchar(20),
+fechaMebendazo date,
+hallazgosHC text,
+-- examen fisico
+-- revision y descripcion por organos y sistemas
+cabezaCuello text,
+toraxPulmonar text,
+cardica text,
+abdomen text,
+genitales text,
+musculoEsqueletico text,
+pielAnexos text,
+neurologico text,
+vesquemaVacunacion varchar(20),
+sufreMaltratoSexual varchar(20),
+tipoMaltrato varchar(120),
+cumplenDerechos varchar(20),
+cualderechoNoCumple varchar(20),
+clasificacion varchar(120),
+referencia varchar(20),
+diagnosticoClinico varchar(120),
+diagnosticoNutricional varchar(120),
+tratamiento text,
+riegoSocial varchar(20),
+recomendaciones text,
+fechaProxCita datetime,
+fechaProxiControl datetime,
+sello text,
+firma text
+);
+
 
 -- pág 14 
 create table HojaSubsecuenteANiñao2a5(
