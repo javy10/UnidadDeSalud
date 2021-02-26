@@ -1,4 +1,24 @@
 create database UnidadSalud;
+
+create table UnidadSalud(
+id Integer primary key auto_increment,
+nombreUnidad text,
+codigoUnidad text,
+imagen text
+);
+create table EmpleadosUnidadS(
+id Integer primary key auto_increment,
+nombreC text not null,
+telefono varchar(20) not null,
+direccion text not null,
+cargo varchar(60) not null,
+especialidad varchar(50),
+email text not null,
+dui varchar(20) not null,
+nit varchar(30) not null,
+unidadSalud Integer,
+Constraint fk_unidadSalud foreign key(unidadSalud) references UnidadSalud(id)
+);
 create table FormularioExpedienteClin(
 id Integer primary key auto_increment,
 nombreEstablecimiento text not null,
@@ -39,7 +59,9 @@ documentoIdentificacion varchar(10),
 numeroDocumento varchar(50),
 responsableTomarInfo varchar(200),
 fechaIncripcion datetime,
-observaciones text
+observaciones text,
+UnidadSaludExp Integer,
+Constraint Fk_fichaIncripcionAM foreign key(UnidadSaludExp) references UnidadSalud(id)
 );
 create table FichaDeInscripcionAM
 (
@@ -171,6 +193,8 @@ clubHipertensos varchar(50),
 clubDiabeticos varchar(50),
 otrosClubs varchar(100)
 	--Gil
+expediente Integer,
+Constraint Fk_expediente foreign key(expediente) references FormularioExpedienteClin(id)
 );
 create table ProgramaAenSdelAdultoMayor(
 id Integer primary key auto_increment,
@@ -407,7 +431,9 @@ vacunaNeumococo23V1raD varchar(20),
 vacunaNeumococo23V2daD varchar(20),
 vacunaNeumococo23V3raD varchar(20),
 vacunaNeumococo23V1erR varchar(20),
-vacunaNeumococo23V2doR varchar(20)
+vacunaNeumococo23V2doR varchar(20),
+expediente Integer,
+Constraint Fk_expediente foreign key(expediente) references FormularioExpedienteClin(id)
 );
 create table TamizajeViolencia(
 id Integer primary key auto_increment,
@@ -443,23 +469,11 @@ pregunta2A varchar(20),
 pregunta3A varchar(20),
 pregunta4A varchar(20),
 pregunta5A varchar(20),
-pregunta6A varchar(20)
+pregunta6A varchar(20),
+antecedenteMedicos Integer,
+Constraint Fk_antecedenteMedicos foreign key(antecedenteMedicos) references FAntecedentesMedicos(id)
 );
-create table ConsultaSubsecuenteHyM20a59(
-id Integer primary key auto_increment,
-motivoConsulta varchar(200),
-HXpresenteEnfermedad text,
--- Examen fisico
-presionArterial varchar(20),
-pulso varchar(20),
-frecuenciaRespiratoria varchar(20),
-impresionDiagnostica text,
-tratamientoConsejeria text,
-referencia varchar(50),
-firmaResponsable text,
-sello text,
-responsable varchar(30)
-);
+-- 
 create table HistoriaClinicaHyM20a59(
 id integer primary key auto_increment,
 -- Datos generales
@@ -514,6 +528,25 @@ profilaxisAlgunaVez varchar(20),
 consultaSubsecuenteHyM20a59 Integer,
 CONSTRAINT fk_consulta FOREIGN KEY (consultaSubsecuenteHyM20a59)
         REFERENCES ConsultaSubsecuenteHyM20a59(id)
+);
+
+
+create table ConsultaSubsecuenteHyM20a59(
+id Integer primary key auto_increment,
+motivoConsulta varchar(200),
+HXpresenteEnfermedad text,
+-- Examen fisico
+presionArterial varchar(20),
+pulso varchar(20),
+frecuenciaRespiratoria varchar(20),
+impresionDiagnostica text,
+tratamientoConsejeria text,
+referencia varchar(50),
+firmaResponsable text,
+sello text,
+responsable varchar(30),
+historia20a59 Integer,
+Constraint Fk_ehistoria20a59 foreign key(historia20a59) references HistoriaClinicaHyM20a59(id)
 );
 
 create table EvaluacionAlimentacion(
@@ -1168,3 +1201,29 @@ create table HistorialAdolescente
     PercepcionFamiliar varchar(25),
     Observaciones text
 );
+--- CONSULTA INSCRIPCION
+Create table ConsultaInscripcion(
+id Integer primary key auto_increment,
+noExpediente text not null,
+fecha datetime not null,
+nombre varchar(120) not null,
+edad Integer not null,
+ocupacion varchar(50),
+direccion text,
+incripcion1raVida varchar(10),
+inscripcion1raInsti varchar(10),
+departamento varchar(50),
+municipio varchar(50),
+canton varchar(50),
+caserio varchar(50),
+añosEstudio Integer,
+-- Antecedentes obstetricos
+noEmbarazos Integer,
+partosAterminos Integer,
+partosPrema Integer,
+abortos Integer,
+vivosActualmente Int
+
+);
+
+--- Continuara
