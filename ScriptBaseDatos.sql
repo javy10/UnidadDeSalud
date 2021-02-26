@@ -895,4 +895,58 @@ controlSubsecuente Integer,
 Constraint Fk_controlSubsecuente foreign key(controlSubsecuente)
 			references ControlSubsecuente8DaMenor2M(id)
 );
+-- SIGUIENTE TABLA RESPECTO A LA INSCRIPCION O CONTROL SUBSECUENTE DE 8 DIAS A 2 MESES
+
+Create table IcteAlimentacion(
+id Integer primary key auto_increment,
+evaluarinicio varchar(10),
+evaluarSignoNeuro varchar(10),
+evaluarClasKramer varchar (10),
+ictBajoR varchar(10),
+-- Evaluar alimentacion del recien nacido
+alimentaPecho varchar(10),
+malaSuccion varchar(10),
+malAgarre varchar(10),
+malaPosicion varchar(10),
+recibeFormula varchar(10),
+aliPechoMenos12 varchar(10),
+piezaDentalNac varchar(10),
+alteraInfeccOral varchar(10),
+aparienciagen varchar(50),
+edemas varchar(10),
+Mucosas varchar(20),
+color varchar(15),
+otrosHallazgos text,
+cabYcuello text,
+torYpulmonar text,
+cardiaco text,
+abdomen text,
+genitales text,
+muscEsqueletico text,
+pielYanexos text,
+caderas varchar(30),
+neurologicos text,
+malformaciones text,
+evaluarDesarrollo varchar(25),
+existeRiesgo varchar(100),
+verificarvacuna varchar(10),
+evaluarMaltrato varchar(10),
+tipoMlatrato varchar(100),
+evaluarDerechos varchar(10),
+derechoNoCumple varchar(100),
+clasificacion varchar(100),
+referencia varchar(10),
+diagnosticoCli varchar(100),
+tratamiento text,
+riesgoSocial varchar(10),
+cualReiesgo text,
+fechaProximaCita date,
+control varchar(100),
+sello text,
+firmaResponsable text,
+controlSubsecuente Integer,
+Constraint Fk_controlSubsecuente foreign key(controlSubsecuente)
+			references ControlSubsecuente8DaMenor2M(id)
+);
+
 
