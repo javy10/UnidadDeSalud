@@ -1631,7 +1631,18 @@ embarazo215to varchar(10)
 create table HistoriaPerinatal(
 id integer primary key auto_increment,
 nombre varchar(100),
-apellidos varchar(100)
+apellido varchar(100),
+domicilio text,
+localidad varchar(100),
+telefono varchar(9),
+fechaNaci date,
+edad int,
+menos15mayor35 varchar(10),
+etnia varchar(15),
+alfabeta varchar(5),
+estudios varchar(25),
+aniosmayornivel int,
+
 );
 -- Siguiente tabla
 
