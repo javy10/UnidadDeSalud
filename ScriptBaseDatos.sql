@@ -1642,7 +1642,8 @@ etnia varchar(15),
 alfabeta varchar(5),
 estudios varchar(25),
 aniosmayornivel int,
-
+estadocivil varchar(25),
+vivesolo varchar(10),
 );
 -- Siguiente tabla
 
