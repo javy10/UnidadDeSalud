@@ -1644,6 +1644,27 @@ estudios varchar(25),
 aniosmayornivel int,
 estadocivil varchar(25),
 vivesolo varchar(10),
+aniosmayornivel int,
+estadocivil varchar(20),
+vivesola varchar(5),
+
+
+);
+
+create table ConsultasAntenatales(
+id Integer primary key auto_increment,
+fechacita datetime not null,
+edadGest Integer not null,
+peso varchar(10),
+PA varchar(50),
+alturaUterina varchar(40),
+presentacion varchar(30),
+FCF varchar(30),
+movFetales varchar(30),
+ProteiNuria varchar(30),
+SigExamTrata text,
+iniTecni varchar(30),
+proximaCita date
 );
 -- Siguiente tabla
 
