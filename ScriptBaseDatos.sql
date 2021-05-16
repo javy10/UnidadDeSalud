@@ -1709,7 +1709,30 @@ movFetales varchar(30),
 ProteiNuria varchar(30),
 SigExamTrata text,
 iniTecni varchar(30),
-proximaCita date
+proximaCita date,
+tipoNac varchar(30),
+fechaIngreso date,
+carne varchar(10),
+conPreTotal varchar(10),
+hospiEmba varchar(10),
+diasHospi Integer,
+-- 
+corticoide varchar(30),
+semanaInicio varchar(20),
+iniParto varchar(20),
+rotuMembraAnte varchar(20),
+fecharotura datetime,
+menor37Sem varchar(10),
+mayorIgual18Hr varchar(10),
+temMayorIgual38G varchar(10),
+edadGestsem varchar(10),
+edadGestDias varchar(10),
+porFUM varchar(10),
+porECO varchar(10),
+situacionPre varchar(30),
+tamañoFeto varchar(10),
+acompañanTDP varchar(30),
+acompananP varchar(30)
 );
 -- Siguiente tabla
 
