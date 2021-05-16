@@ -200,8 +200,7 @@ clubAdultosMayores varchar(50),
 clubArtriticos varchar(50),
 clubHipertensos varchar(50),
 clubDiabeticos varchar(50),
-otrosClubs varchar(100)
-	--Gil
+otrosClubs varchar(100),
 expediente Integer,
 Constraint Fk_expediente foreign key(expediente) references FormularioExpedienteClin(id)
 );
@@ -375,7 +374,7 @@ violenciaFisica varchar(20),
 violenciaAutoinflingida varchar(20),
 victmaAbandono varchar(20),
 victimaTrataPersonas varchar(20),
-observcaionesViolencia varchar(50),,
+observcaionesViolencia varchar(50),
 -- Riesgo laboral
 ocupacion varchar(150),
 riesgoLaboral varchar(20),
@@ -570,7 +569,7 @@ cualesAlimentos Varchar(150),
 tomaPacha varchar(20),
 huboCambioNalimentacion varchar(20),
 desdecuando datetime,
---Control odontologico
+-- Control odontologico
 estaEncontrolOdont varchar(20),
 dolorDental varchar(20),
 AbscesoMucosaCdiente varchar(20),
@@ -1629,6 +1628,11 @@ embarazo214to varchar(10),
 embarazo215to varchar(10)
 );
 
+create table HistoriaPerinatal(
+id integer primary key auto_increment,
+nombre varchar(100),
+apellidos varchar(100)
+);
 -- Siguiente tabla
 
 
